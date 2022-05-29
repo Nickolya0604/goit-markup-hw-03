@@ -4,7 +4,7 @@
   --accent-color: #2196f3;
   --background-color: #2f303a;
   --p-color: #757575;
-  --button-logo-color: #ffffff;
+  --background-and-button-logo-color: #ffffff;
 }
 
 body {
@@ -34,10 +34,16 @@ button {
   /* outline: 2px solid tomato; */
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* ------------------------------------Header--------------------------------------- */
 .header {
   border-bottom: 1px solid #ececec;
-  background-color: #ffffff;
+  background-color: var(--background-and-button-logo-color);
   padding-top: 32px;
   padding-bottom: 32px;
 }
@@ -45,9 +51,10 @@ button {
 .main-nav,
 .site-nav,
 .header-contacts,
-.container.nav {
+.header .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .site-nav {
@@ -85,10 +92,6 @@ button {
   text-decoration: none;
 }
 
-.header-contacts {
-  margin-left: auto;
-}
-
 .header-contacts .item:not(:last-child) {
   margin-right: 50px;
 }
@@ -109,39 +112,40 @@ button {
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
-  text-align: center;
 }
 
 .section.hero {
   background: var(--background-color);
   padding-top: 200px;
   padding-bottom: 200px;
+  text-align: center;
 }
 
 .main-text {
-  margin-top: 0;
-  margin-bottom: 30px;
-  color: var(--button-logo-color);
+  margin: 0 auto 30px;
+  color: var(--background-and-button-logo-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   width: 696px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .button-order {
   display: inline-block;
   background-color: var(--accent-color);
-  color: var(--button-logo-color);
+  color: var(--background-and-button-logo-color);
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
   border-radius: 4px;
   padding: 10px 32px;
+}
+
+.section.detail {
+  background-color: var(--background-and-button-logo-color);
 }
 
 .details-list {
@@ -151,10 +155,11 @@ button {
 .details-list li {
   width: 270px;
   text-align: left;
+  margin-right: 30px;
 }
 
-.details-list li:nth-child(-n + 3) {
-  margin-right: 30px;
+.details-list li:last-child {
+  margin-right: 0;
 }
 
 .details-list h3 {
@@ -176,6 +181,11 @@ button {
   color: var(--p-color);
 }
 
+.section.whatwedo {
+  background-color: var(--background-and-button-logo-color);
+  text-align: center;
+}
+
 .whatwedo-text {
   margin-top: 0;
   margin-bottom: 50px;
@@ -189,22 +199,31 @@ button {
   display: flex;
 }
 
-.whatwedo-list li:nth-child(-n + 2) {
+.whatwedo-list li {
   margin-right: 30px;
+}
+
+.whatwedo-list li:last-child {
+  margin-right: 0;
 }
 
 .section.team {
   background: #f5f4fa;
+  text-align: center;
 }
 
 .team-list {
   display: flex;
 }
 
-.team-list li:nth-child(-n + 3) {
+.team-list li {
   margin-right: 30px;
+  background-color: var(--background-and-button-logo-color);
 }
 
+.team-list li:last-child {
+  margin-right: 0;
+}
 .team-title {
   margin-top: 0;
   margin-bottom: 50px;
@@ -228,6 +247,8 @@ button {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--p-color);
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 
 /* -----------------------------------Footer--------------------------------- */
@@ -239,11 +260,12 @@ button {
 }
 
 .logo-studio-footer {
-  color: var(--button-logo-color);
+  color: var(--background-and-button-logo-color);
 }
 
-.footer-list {
-  margin-top: 20px;
+.logo-link.foot {
+  margin-bottom: 20px;
+  display: block;
 }
 
 .address-footer {
@@ -267,7 +289,7 @@ button {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  color: var(--button-logo-color);
+  color: var(--background-and-button-logo-color);
   text-decoration: none;
 }
 
@@ -297,6 +319,10 @@ button {
   margin: -1px;
 }
 
+.section.portfolio {
+  background-color: var(--background-and-button-logo-color);
+}
+
 .portfolio-list,
 .buttons {
   display: flex;
@@ -307,8 +333,7 @@ button {
 .portfolio-list li {
   margin-right: 30px;
   margin-bottom: 30px;
-  background: var(--button-logo-color);
-  border-bottom: 1px solid #eeeeee;
+  background: var(--background-and-button-logo-color);
 }
 
 .portfolio-list li:nth-child(3n) {
@@ -324,7 +349,7 @@ button {
   font-size: 16px;
   line-height: 1.63;
   letter-spacing: 0.03em;
-  padding: 6 22;
+  padding: 6px 22px;
   border-radius: 4px;
 }
 
@@ -333,14 +358,23 @@ button {
   justify-content: center;
 }
 
-.buttons li:nth-child(-n + 4) {
+.buttons li {
   margin-right: 8px;
+}
+
+.buttons li:last-child {
+  margin-right: 0;
 }
 
 .buttons button:hover,
 .buttons button:focus {
-  color: var(--button-logo-color);
+  color: var(--background-and-button-logo-color);
   background-color: var(--accent-color);
+}
+
+.cards {
+  padding: 20px 24px;
+  border: 1px solid #eeeeee;
 }
 
 .portfolio-list h2 {
